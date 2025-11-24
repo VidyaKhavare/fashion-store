@@ -1,0 +1,6 @@
+.mini-toggle { background:#e91e63;color:#fff;border:none;padding:8px 12px;border-radius:8px; }
+.mini-drawer { position:fixed; right:20px; top:70px; width:320px; max-height:70vh; background:#fff; box-shadow:0 12px 30px rgba(0,0,0,0.12); border-radius:10px; transform: translateY(-10px) scale(0.98); opacity:0; transition:all .22s; overflow:auto; padding:12px; pointer-events:none; }
+.mini-drawer.open { transform:none; opacity:1; pointer-events:auto; }
+.mini-item { display:flex; gap:10px; align-items:center; padding:8px 0; border-bottom:1px solid #f0f0f0; }
+.mini-item img { width:50px; height:50px; object-fit:cover; border-radius:6px; }
+.view-cart { display:block; margin-top:8px; text-align:center; background:#e91e63; color:#fff; padding:8px; border-radius:6px; text-decoration:none; }

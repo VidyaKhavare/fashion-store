@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+.page-container.animate {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.7s ease-out forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

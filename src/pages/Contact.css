@@ -1,0 +1,59 @@
+/* Row container for left + right */
+.contact-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+  background: #fdf2f7;
+}
+
+/* Left side (original) */
+.left-container {
+  width: 45%;
+}
+
+.contact-page {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.contact-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background: #c2185b;
+}
+
+/* Right side container */
+.right-container {
+  width: 35%;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.info-box h4 {
+  margin-top: 15px;
+  color: #444;
+}
+     

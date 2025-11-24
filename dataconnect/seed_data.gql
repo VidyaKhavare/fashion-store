@@ -1,0 +1,70 @@
+mutation CreateSeedData @transaction @auth(level: PUBLIC, insecureReason: "This operation is for seeding data and is safe to expose to the public.") {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      firstName: "Demo",
+      lastName: "User1",
+      email: "demo1@example.com",
+      passwordHash: "somehash",
+      createdAt: "2024-01-01T00:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      firstName: "Demo",
+      lastName: "User2",
+      email: "demo2@example.com",
+      passwordHash: "someotherhash",
+      createdAt: "2024-01-02T00:00:00Z"
+    }
+  ])
+  product_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440002",
+      name: "Example Product 1",
+      description: "This is an example product.",
+      category: "Shirts",
+      price: 25.00,
+      imageUrl: "http://example.com/image1.jpg",
+      createdAt: "2024-01-03T00:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440003",
+      name: "Example Product 2",
+      description: "This is another example product.",
+      category: "Pants",
+      price: 50.00,
+      imageUrl: "http://example.com/image2.jpg",
+      createdAt: "2024-01-04T00:00:00Z"
+    }
+  ])
+  order_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440004",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      orderDate: "2024-01-05T00:00:00Z",
+      status: "Shipped",
+      totalAmount: 75.00
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440005",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      orderDate: "2024-01-06T00:00:00Z",
+      status: "Pending",
+      totalAmount: 100.00
+    }
+  ])
+  orderItem_insertMany(data: [
+    {
+      orderId: "550e8400-e29b-41d4-a716-446655440004",
+      productId: "550e8400-e29b-41d4-a716-446655440002",
+      priceAtPurchase: 25.00,
+      quantity: 1
+    },
+    {
+      orderId: "550e8400-e29b-41d4-a716-446655440004",
+      productId: "550e8400-e29b-41d4-a716-446655440003",
+      priceAtPurchase: 50.00,
+      quantity: 1
+    }
+  ])
+}

@@ -1,0 +1,39 @@
+mutation AddProductToWishlist($productId: UUID!) @auth(level: USER) {
+  wishlistItem_insert(data: {
+    userId_expr: "auth.uid",
+    productId: $productId,
+    addedAt_expr: "request.time"
+  })
+}
+
+query GetProductsByCategory($category: String!) @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  products(where: {category: {eq: $category}}) {
+    id
+    name
+    description
+    imageUrl
+    price
+  }
+}
+
+mutation CreateNewOrder($paymentDetails: String!, $shippingAddress: String!, $status: String!, $totalAmount: Float!) @auth(level: USER) {
+  order_insert(data: {
+    userId_expr: "auth.uid",
+    orderDate_expr: "request.time",
+    paymentDetails: $paymentDetails,
+    shippingAddress: $shippingAddress,
+    status: $status,
+    totalAmount: $totalAmount
+  })
+}
+
+query GetMyOrders @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  orders(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    orderDate
+    paymentDetails
+    shippingAddress
+    status
+    totalAmount
+  }
+}
